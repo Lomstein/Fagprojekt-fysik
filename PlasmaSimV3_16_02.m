@@ -34,8 +34,16 @@ ylabel('Y')
 zlabel('Z')
 hold off
 
-v = [x(:,4),x(:,5),x(:,6)]
-r = (m * sin(v))/(abs(q)*B)
+
+
+V = [x(:,4),x(:,5),x(:,6)]
+Blen = repmat(B,length(V),1)
+
+
+
+sintheta = cross(V,Blen)./(abs(V).*abs(Blen))
+ 
+r = (m*V.*sintheta)./(abs(q).*Blen)
 
 % figure(2)
 % plot(r,t)
