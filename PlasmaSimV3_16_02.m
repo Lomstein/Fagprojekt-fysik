@@ -37,6 +37,9 @@ hold off
 v = [x(:,4),x(:,5),x(:,6)]
 r = (m * sin(v))/(abs(q)*B)
 
+test test this is a test
+print(hello world)
+
 % figure(2)
 % plot(r,t)
 % hold on
